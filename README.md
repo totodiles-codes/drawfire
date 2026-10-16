@@ -1,4 +1,4 @@
-<img src="assets/icon.svg" width="64" height="64" alt="">
+<img src="site/media/og.jpg" alt="A drawn arena floating in orbit above the Earth" width="100%">
 
 # DRAW THE MAP
 
@@ -7,12 +7,24 @@
 every match starts with 60 seconds where everyone draws the arena in orbit above the Earth, then you
 fight on whatever got drawn.
 
+**[Play in your browser](https://totodiles-codes.github.io/drawfire/play/)** ·
+[Website](https://totodiles-codes.github.io/drawfire/) ·
+[Download for offline play](https://totodiles-codes.github.io/drawfire/download/draw-the-map.html) ·
+[30 s reel](site/media/reel.mp4)
+
 ## Play
+
+**Offline:** the whole game is one HTML file. Download
+[draw-the-map.html](https://totodiles-codes.github.io/drawfire/download/draw-the-map.html) and double-click it; it opens in
+your default browser on Windows, macOS or Linux, no install and no internet needed.
+
+**From source:**
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
 npm run build      # static build in dist/
+npm run build:single  # the same build packed into one file: dist-single/draw-the-map.html
 npm test           # geometry, physics and bot tests
 ```
 
@@ -80,3 +92,6 @@ Vanilla JS, [three.js](https://threejs.org) and [three-mesh-bvh](https://github.
 - `src/audio.js`: every sound is synthesised with WebAudio, so there are no asset files.
 
 On software renderers (e.g. SwiftShader) the game drops to a low-quality path automatically. You can force it with `?low`.
+
+The website (`site/`, published to GitHub Pages by `.github/workflows/pages.yml`) is a static landing page;
+`scripts/build-site.mjs` puts the game build at `/play/` and the single-file build at `/download/`.
